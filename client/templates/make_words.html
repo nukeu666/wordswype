@@ -1,0 +1,9 @@
+<template name="makeWords">
+  {{#each wordLine}}
+    {{> words}}
+  {{/each}}
+</template>
+
+<template name="words">
+  <div><span>{{word}}</span>{{#if act}}<span>***</span>{{/if}}</div>
+</template>

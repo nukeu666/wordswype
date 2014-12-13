@@ -1,0 +1,12 @@
+<template name="availableLetters">
+  {{#each letters}}
+    {{> availableLetter}}
+  {{/each}}
+</template>
+
+<template name="availableLetter">
+  <span class="letter" id="{{_id}}">
+    {{letter}}
+  </span>
+</template>
+
