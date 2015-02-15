@@ -1,6 +1,5 @@
 Template.mainBody.rendered=function(){
   $('body').on('keydown',function(e){
-<<<<<<< HEAD
   if(e.which === 38){
     var active=Session.get('active');
     active=(active-1)%numWords;
@@ -16,8 +15,5 @@ Template.mainBody.rendered=function(){
       var active=Session.get('active');
       Meteor.call('checkWord',active);
     }
-=======
-  console.log(e.which);
->>>>>>> bf632c67e786d76d56c32ba3b0de41a373bdb02e
 });
 }

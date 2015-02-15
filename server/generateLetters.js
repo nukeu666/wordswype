@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Meteor.publish('letters',function(userId){
   console.log("ask let:"+userId);
   return Letters.find({"userId":userId});
@@ -9,22 +8,11 @@ Meteor.publish('words',function(userId){
 });
 var generateLetters=function(userId){
   Letters.insert({"letter":makeChar(),"userId":userId});
-=======
-Meteor.publish('letters',function(){
-  return Letters.find({});
-});
-Meteor.publish('words',function(){
-  return Words.find({});
-});
-var generateLetters=function(){
-  Letters.insert({"letter":makeChar()});
->>>>>>> bf632c67e786d76d56c32ba3b0de41a373bdb02e
 }
 var makeChar=function(){
   return String.fromCharCode(Math.random()*26+65);
 }
 
-<<<<<<< HEAD
 function observeLetters(userId){
   return Letters.find({"userId":userId}).observeChanges({
     removed:function(){
@@ -65,18 +53,3 @@ Meteor.onConnection(function(conn){
     delete games[conn.id];
   });
 });
-=======
-var letterCount=Letters.find({});
-var addLetters=letterCount.observeChanges({
-  removed:function(){
-    console.log('generated');
-    generateLetters();
-  }
-});
-Meteor.startup(function(){
-  while(Letters.find().count()<numLetters){
-     generateLetters();
- }
-});
-
->>>>>>> bf632c67e786d76d56c32ba3b0de41a373bdb02e
