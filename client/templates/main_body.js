@@ -5,7 +5,7 @@ Template.mainBody.rendered=function(){
     active=(active-1)%numWords;
     if(active<0)active=active+numWords;
     Session.set('active',active);
-  } 
+  }
   else if(e.which === 40){
     var active=Session.get('active');
     active=(active+1)%numWords;

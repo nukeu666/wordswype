@@ -7,8 +7,8 @@ Template.availableLetters.helpers({
 Template.availableLetters.events({
   'click .letter':function(e){
     var clicked=$(e.target).attr('id');
-    console.log('sending:'+clicked);
-    Meteor.call('pop',clicked,Session.get('active'));
+    console.log('sending:'+clicked+" "+Session.get('active')+" "+conId);
+    Meteor.call('pop',clicked,Session.get('active'),conId);
     /*if(null===Meteor.userId()){
       alert('Please login');
     }*/
